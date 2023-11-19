@@ -1,0 +1,72 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Real Time Chat App</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            };
+        </script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .content-auto {
+                    content-visibility: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="w-100 p-6 h-screen bg-slate-100 ">
+            <section class="p-6 m-full md:w-1/2 border border-zinc-300 m-auto rounded-xl flex flex-col items-center">
+                <!-- Title -->
+                <h1 class="text-xl font-black">
+                    Real Time Chat App
+                </h1>
+                <!-- Name Form Section -->
+                <section id="nameSection"  class="py-6 w-100 flex flex-row gap-3">
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter Name"
+                        class="w-full bg-slate-100 p-2 rounded-md"
+                    />
+                    <button class="px-6 border rounded-md hover:bg-blue-500" id="nameButton">Enter Name</button>
+                </section>
+                <!-- Chat Section -->
+                <section class="w-full min-h-[300px] max-h-[350px] overflow-y-scroll " id="chatSection">
+                    <!-- <div class="w-1/2 border border-slate-500 rounded-md p-2 my-2">
+                        <h5 class="text-black text-slate-900 text-lg">John Doe</h5>
+                        <span class="text-sm text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati officiis perspiciatis explicabo, deleniti molestias in rerum quam assumenda! Fugiat, dicta ducimus. Delectus quae ex velit necessitatibus, sit odit itaque excepturi.</span>
+                    </div>
+                    <div class="w-1/2 bg-blue-400 border rounded-md p-2 my-2 ml-auto ">
+                        <h5 class="text-black text-lg text=-late-900">Juan Dela Cruz</h5>
+                        <span class="text-sm text-slate-700">Lorem ipsum!</span>
+                    </div> -->
+                </section>
+                <!-- Input Section -->
+                <section class="flex gap-2 p-4">
+                    <input
+                        type="text"
+                        name="message"
+                        id="chatInput"
+                        placeholder="Enter Message"
+                        class="w-full bg-slate-100 p-2 rounded-md"
+                    />
+                    <button id="chatButton" class="px-6 border rounded-md bg-blue-500 hover:bg-slate-100 hover:border-slate-900 text-slate-100 hover:text-slate-900">Send</button>
+                </section>
+            </section>
+        </main>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
